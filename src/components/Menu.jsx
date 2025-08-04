@@ -115,7 +115,7 @@ const Menu = () => {
                   2) Restaurant Bookings
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/dashboard/transport")}>
+                <MenuItem onClick={() => navigate("/dashboard/luxurytransport")}>
                   3) Luxury Transport
                 </MenuItem>
                 <Divider2 />
@@ -123,11 +123,11 @@ const Menu = () => {
                   4) Special Arrangements
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/dashboard/consultation")}>
+                <MenuItem onClick={() => navigate("/dashboard/travelconsultation")}>
                   5) Travel Consultation
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/dashboard/tour-guide")}>
+                <MenuItem onClick={() => navigate("/dashboard/tourguidearrangements")}>
                   6) Tour Guide Arrangements
                 </MenuItem>
               </MenuSection>

@@ -3,7 +3,13 @@ const ROUTES = {
   LOGINAFTER: "/login-after",
   HOME: "/",
   DASHBOARD: "/dashboard",
-  ACCOMMODATION: "accommodation", // Faqat nested path
+  ACCOMMODATION: "accommodation", 
+  ACCOMMODATION: "arrangements", 
+  LUXURYTRANSPORT: "luxurytransport", 
+  RESTARURANT: "restaurant", 
+  TOURGUIDEARRANGEMENTS: "tourguidearrangements", 
+  TRAVELCONSULTATION: "travelconsultation", 
+
 };
 
-export default ROUTES;
+export default ROUTES; 
