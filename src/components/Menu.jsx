@@ -1,12 +1,13 @@
-//libraries
+// libraries
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useNavigate } from "react-router";
 
-//images
+// images
 import LogoImg from '../images/logo.png';
 
-//styles
+// styles
 const MenuWrapper = styled.div`
   background-color: #000;
   color: #b3935c;
@@ -33,7 +34,6 @@ const Dropdown = styled.div`
   margin-bottom: 10px;
   cursor: pointer;
   user-select: none;
-
 `;
 
 const MenuSection = styled.div`
@@ -69,8 +69,6 @@ const Divider2 = styled.hr`
   margin-left: 20px;
 `;
 
-
-// Framer motion variants
 const variants = {
   open: {
     height: 'auto',
@@ -85,6 +83,7 @@ const variants = {
 };
 
 const Menu = () => {
+  const navigate = useNavigate();
   const [showConcierge, setShowConcierge] = useState(false);
   const [showServices, setShowServices] = useState(false);
 
@@ -92,6 +91,7 @@ const Menu = () => {
     <MenuWrapper>
       <Logo src={LogoImg} alt="Nippon Imperial Logo" />
 
+      {/* Concierge dropdown */}
       <div>
         <Dropdown onClick={() => setShowConcierge(!showConcierge)}>
           Concierge {showConcierge ? '▾' : '▴'}
@@ -107,17 +107,29 @@ const Menu = () => {
               style={{ overflow: 'hidden' }}
             >
               <MenuSection>
-                <MenuItem>1) Accommodation Reservations</MenuItem>
+                <MenuItem onClick={() => navigate("/dashboard/accommodation")}>
+                  1) Accommodation Reservations
+                </MenuItem>
                 <Divider2 />
-                <MenuItem>2) Restaurant Bookings</MenuItem>
+                <MenuItem onClick={() => navigate("/dashboard/restaurant")}>
+                  2) Restaurant Bookings
+                </MenuItem>
                 <Divider2 />
-                <MenuItem>3) Luxury Transport</MenuItem>
+                <MenuItem onClick={() => navigate("/dashboard/transport")}>
+                  3) Luxury Transport
+                </MenuItem>
                 <Divider2 />
-                <MenuItem>4) Special Arrangements</MenuItem>
+                <MenuItem onClick={() => navigate("/dashboard/arrangements")}>
+                  4) Special Arrangements
+                </MenuItem>
                 <Divider2 />
-                <MenuItem>5) Travel Consultation</MenuItem>
+                <MenuItem onClick={() => navigate("/dashboard/consultation")}>
+                  5) Travel Consultation
+                </MenuItem>
                 <Divider2 />
-                <MenuItem>6) Tour Guide Arrangements</MenuItem>
+                <MenuItem onClick={() => navigate("/dashboard/tour-guide")}>
+                  6) Tour Guide Arrangements
+                </MenuItem>
               </MenuSection>
             </motion.div>
           )}
@@ -126,6 +138,7 @@ const Menu = () => {
 
       <Divider />
 
+      {/* Services dropdown */}
       <div>
         <Dropdown onClick={() => setShowServices(!showServices)}>
           Services {showServices ? '▾' : '▴'}
@@ -141,13 +154,21 @@ const Menu = () => {
               style={{ overflow: 'hidden' }}
             >
               <MenuSection>
-                <MenuItem>1)  Chauffeur service</MenuItem>
+                <MenuItem onClick={() => navigate("/services/chauffeur")}>
+                  1) Chauffeur Service
+                </MenuItem>
                 <Divider2 />
-                <MenuItem>2)  Airport transfer</MenuItem>
+                <MenuItem onClick={() => navigate("/services/airport-transfer")}>
+                  2) Airport Transfer
+                </MenuItem>
                 <Divider2 />
-                <MenuItem>3)  One day tours</MenuItem>
+                <MenuItem onClick={() => navigate("/services/one-day-tours")}>
+                  3) One Day Tours
+                </MenuItem>
                 <Divider2 />
-                <MenuItem>4)  Multiple days tours</MenuItem>
+                <MenuItem onClick={() => navigate("/services/multi-day-tours")}>
+                  4) Multiple Days Tours
+                </MenuItem>
               </MenuSection>
             </motion.div>
           )}

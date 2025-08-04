@@ -1,11 +1,9 @@
 const ROUTES = {
-    DASHBOARD: "/",
-    LOGIN: "/login",
-    SIGNUP: "/signup",
-    LOGINAFTER: "/loginafter",
-    HOME: "/home",
-    DASHBOARD: "/dashboard",
-  };
-  
-  export default ROUTES;
-  
+  LOGIN: "/login",
+  LOGINAFTER: "/login-after",
+  HOME: "/",
+  DASHBOARD: "/dashboard",
+  ACCOMMODATION: "accommodation", // Faqat nested path
+};
+
+export default ROUTES;
