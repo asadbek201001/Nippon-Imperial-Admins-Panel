@@ -106,32 +106,32 @@ const Menu = () => {
               style={{ overflow: "hidden" }}
             >
               <MenuSection>
-                <MenuItem onClick={() => navigate("/dashboard/accommodation")}>
+                <MenuItem onClick={() => navigate("/accommodation")}>
                   1) Accommodation Reservations
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/dashboard/restaurant")}>
+                <MenuItem onClick={() => navigate("/restaurant")}>
                   2) Restaurant Bookings
                 </MenuItem>
                 <Divider2 />
                 <MenuItem
-                  onClick={() => navigate("/dashboard/luxurytransport")}
+                  onClick={() => navigate("/luxurytransport")}
                 >
                   3) Luxury Transport
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/dashboard/arrangements")}>
+                <MenuItem onClick={() => navigate("/arrangements")}>
                   4) Special Arrangements
                 </MenuItem>
                 <Divider2 />
                 <MenuItem
-                  onClick={() => navigate("/dashboard/travelconsultation")}
+                  onClick={() => navigate("/travelconsultation")}
                 >
                   5) Travel Consultation
                 </MenuItem>
                 <Divider2 />
                 <MenuItem
-                  onClick={() => navigate("/dashboard/tourguidearrangements")}
+                  onClick={() => navigate("/tourguidearrangements")}
                 >
                   6) Tour Guide Arrangements
                 </MenuItem>
@@ -159,21 +159,20 @@ const Menu = () => {
               style={{ overflow: "hidden" }}
             >
               <MenuSection>
-                <MenuItem onClick={() => navigate("/services/chauffeur")}>
+                <MenuItem>
                   1) Chauffeur Service
                 </MenuItem>
                 <Divider2 />
                 <MenuItem
-                  onClick={() => navigate("/services/airport-transfer")}
                 >
                   2) Airport Transfer
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/services/one-day-tours")}>
+                <MenuItem>
                   3) One Day Tours
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/services/multi-day-tours")}>
+                <MenuItem>
                   4) Multiple Days Tours
                 </MenuItem>
               </MenuSection>

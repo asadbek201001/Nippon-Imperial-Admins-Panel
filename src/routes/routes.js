@@ -1,8 +1,7 @@
 const ROUTES = {
   LOGIN: "/login",
   LOGINAFTER: "/login-after",
-  HOME: "/",
-  DASHBOARD: "/dashboard",
+  DASHBOARD: "/",
   ACCOMMODATION: "accommodation", 
   ACCOMMODATION: "arrangements", 
   LUXURYTRANSPORT: "luxurytransport", 
