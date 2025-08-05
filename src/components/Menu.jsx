@@ -9,14 +9,15 @@ import LogoImg from "../images/logo.png";
 
 // styles
 const MenuWrapper = styled.div`
-  background-color: #000;
   color: #b3935c;
   padding: 40px 20px;
   width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 10px;
   border-right: 1px solid #b3935c;
+
+
 `;
 
 const Logo = styled.img`
@@ -31,7 +32,6 @@ const Dropdown = styled.div`
   border: 1px solid #b3935c;
   padding: 8px 12px;
   border-radius: 10px;
-  margin-bottom: 10px;
   cursor: pointer;
   user-select: none;
 `;
@@ -55,11 +55,11 @@ const MenuItem = styled.div`
   }
 `;
 
-const Divider = styled.hr`
-  border: none;
-  border-top: 1px solid #b3935c44;
-  margin: 10px 0;
+const Space = styled.div`
+height: 30px;
 `;
+
+
 
 const Divider2 = styled.hr`
   border: none;
@@ -90,10 +90,11 @@ const Menu = () => {
   return (
     <MenuWrapper>
       <Logo src={LogoImg} alt="Nippon Imperial Logo" />
+      <Space />
 
       <div>
         <Dropdown onClick={() => setShowConcierge(!showConcierge)}>
-          Concierge {showConcierge ? "▾" : "▴"}
+          Concierge {showConcierge ? "▴" : "▾"}
         </Dropdown>
         <AnimatePresence initial={false}>
           {showConcierge && (
@@ -141,12 +142,11 @@ const Menu = () => {
         </AnimatePresence>
       </div>
 
-      <Divider />
 
       {/* Services dropdown */}
       <div>
         <Dropdown onClick={() => setShowServices(!showServices)}>
-          Services {showServices ? "▾" : "▴"}
+          Services {showServices ? "▴" : "▾"}
         </Dropdown>
         <AnimatePresence initial={false}>
           {showServices && (
