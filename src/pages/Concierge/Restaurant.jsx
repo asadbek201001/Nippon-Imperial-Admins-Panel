@@ -121,102 +121,150 @@ const Select = styled.select`
 `;
 
 const Restaurant = () => {
-  const [open, setOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    date: "",
-    time: "",
-    guests: "",
-    cuisine: "",
-    notes: "",
-  });
+    const [open, setOpen] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        date: "",
+        time: "",
+        guests: "",
+        cuisine: "",
+        notes: "",
+    });
 
-  const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+    const handleChange = (e) => {
+        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { fullName, email, date, time, guests, cuisine } = formData;
-    if (!(fullName && email && date && time && guests && cuisine)) {
-      alert("Please fill all required fields.");
-      return;
-    }
-    setSubmitted(true);
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { fullName, email, date, time, guests, cuisine } = formData;
+        if (!(fullName && email && date && time && guests && cuisine)) {
+            alert("Please fill all required fields.");
+            return;
+        }
+        setSubmitted(true);
+    };
 
-  return (
-    <Wrapper>
-      <Card>
-        <Img src={Img2} alt="restaurant" onClick={() => setOpen(true)} />
-        <Content>
-          <P $fontSize="50px">Restaurant Booking</P>
-          <P $margin="25px 0">
-            Book a table at Japan’s finest restaurants. Let us help you find the perfect place for your special night.
-          </P>
-          <Button onClick={() => setOpen(true)}>Book Now</Button>
-        </Content>
-      </Card>
+    return (
+        <Wrapper>
+            <Card>
+                <Img src={Img2} alt="restaurant" onClick={() => setOpen(true)} />
+                <Content>
+                    <P $fontSize="50px">Restaurant Booking</P>
+                    <P $margin="25px 0">
+                        Book a table at Japan’s finest restaurants. Let us help you find the
+                        perfect place for your special night.
+                    </P>
+                    <Button onClick={() => setOpen(true)}>Book Now</Button>
+                </Content>
+            </Card>
 
-      <Dialog
-        open={open}
-        onClose={() => setOpen(false)}
-        maxWidth={false}
-        PaperProps={{
-          style: {
-            width: "800px",
-            borderRadius: "20px",
-            background: "black",
-          },
-        }}
-        BackdropProps={{
-          style: {
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-            backdropFilter: "blur(5px)",
-          },
-        }}
-      >
-        <DialogWrapper>
-          <P $fontSize="60px">Book a Table</P>
-          <P $fontSize="25px" $width="514px" $textAlign="center" $margin="20px 0">
-            Fill in your preferences and we’ll arrange your perfect dining experience.
-          </P>
+            <Dialog
+                open={open}
+                onClose={() => setOpen(false)}
+                maxWidth={false}
+                PaperProps={{
+                    style: {
+                        width: "800px",
+                        borderRadius: "20px",
+                        background: "black",
+                    },
+                }}
+                BackdropProps={{
+                    style: {
+                        backgroundColor: "rgba(0, 0, 0, 0.7)",
+                        backdropFilter: "blur(5px)",
+                    },
+                }}
+            >
+                <DialogWrapper>
+                    <P $fontSize="60px">Book a Table</P>
+                    <P
+                        $fontSize="25px"
+                        $width="514px"
+                        $textAlign="center"
+                        $margin="20px 0"
+                    >
+                        Fill in your preferences and we’ll arrange your perfect dining
+                        experience.
+                    </P>
 
-          {submitted ? (
-            <P $fontSize="30px" $margin="40px 0">✅ Your booking has been submitted!</P>
-          ) : (
-            <Form onSubmit={handleSubmit}>
-              <Input name="fullName" value={formData.fullName} onChange={handleChange} placeholder="Full Name" required />
-              <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="Email Address" required />
-              <Input name="date" type="date" value={formData.date} onChange={handleChange} required />
-              <Input name="time" type="time" value={formData.time} onChange={handleChange} required />
-              <Input name="guests" type="number" value={formData.guests} onChange={handleChange} placeholder="Guests" required />
-              <Select name="cuisine" value={formData.cuisine} onChange={handleChange} required>
-                <option value="" disabled>Select Cuisine</option>
-                <option value="sushi">Sushi</option>
-                <option value="kaiseki">Kaiseki</option>
-                <option value="yakitori">Yakitori</option>
-                <option value="international">International</option>
-              </Select>
-              <FullWidth>
-                <Input
-                  name="notes"
-                  value={formData.notes}
-                  onChange={handleChange}
-                  placeholder="Special Requests (Optional)"
-                />
-              </FullWidth>
-              <FullWidth>
-                <Button type="submit">Submit Reservation</Button>
-              </FullWidth>
-            </Form>
-          )}
-        </DialogWrapper>
-      </Dialog>
-    </Wrapper>
-  );
+                    {submitted ? (
+                        <P $fontSize="30px" $margin="40px 0">
+                            ✅ Your booking has been submitted!
+                        </P>
+                    ) : (
+                        <Form onSubmit={handleSubmit}>
+                            <Input
+                                name="fullName"
+                                value={formData.fullName}
+                                onChange={handleChange}
+                                placeholder="Full Name"
+                                required
+                            />
+                            <Input
+                                name="email"
+                                type="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="Email Address"
+                                required
+                            />
+                            <Input
+                                name="date"
+                                type="date"
+                                value={formData.date}
+                                onChange={handleChange}
+                                required
+                            />
+                            <Input
+                                name="time"
+                                type="time"
+                                value={formData.time}
+                                onChange={handleChange}
+                                required
+                            />
+                            <Input
+                                name="guests"
+                                type="number"
+                                value={formData.guests}
+                                onChange={handleChange}
+                                placeholder="Guests"
+                                required
+                            />
+                            <Select
+                                name="cuisine"
+                                value={formData.cuisine}
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="" disabled>
+                                    Select Cuisine
+                                </option>
+                                <option value="sushi">Sushi</option>
+                                <option value="kaiseki">Kaiseki</option>
+                                <option value="yakitori">Yakitori</option>
+                                <option value="international">International</option>
+                            </Select>
+                            <FullWidth>
+                                <Input
+                                    name="notes"
+                                    value={formData.notes}
+                                    onChange={handleChange}
+                                    placeholder="Special Requests (Optional)"
+                                />
+                            </FullWidth>
+                            <FullWidth>
+                                <Button type="submit">Submit Reservation</Button>
+                            </FullWidth>
+                        </Form>
+                    )}
+                </DialogWrapper>
+            </Dialog>
+        </Wrapper>
+    );
 };
 
 export default Restaurant;

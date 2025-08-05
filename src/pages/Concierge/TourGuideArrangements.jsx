@@ -123,89 +123,128 @@ const TextArea = styled.textarea`
 
 // Main Component
 const TourGuide = () => {
-  const [open, setOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    fullName: "",
-    phone: "",
-    email: "",
-    destination: "",
-    language: "",
-    additionalNotes: "",
-  });
+    const [open, setOpen] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: "",
+        phone: "",
+        email: "",
+        destination: "",
+        language: "",
+        additionalNotes: "",
+    });
 
-  const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+    const handleChange = (e) => {
+        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { fullName, phone, email, destination, language } = formData;
-    if (!(fullName && phone && email && destination && language)) {
-      alert("Please fill all required fields.");
-      return;
-    }
-    setSubmitted(true);
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { fullName, phone, email, destination, language } = formData;
+        if (!(fullName && phone && email && destination && language)) {
+            alert("Please fill all required fields.");
+            return;
+        }
+        setSubmitted(true);
+    };
 
-  return (
-    <Wrapper>
-      <Card>
-        <Img src={Img5} alt="Tour Guide" onClick={() => setOpen(true)} />
-        <Content>
-          <P $fontSize="50px">Tour Guide</P>
-          <P $margin="25px 0">
-            Explore with confidence! Book a local guide to enrich your travel experience.
-          </P>
-          <Button onClick={() => setOpen(true)}>Book a Tour Guide</Button>
-        </Content>
-      </Card>
+    return (
+        <Wrapper>
+            <Card>
+                <Img src={Img5} alt="Tour Guide" onClick={() => setOpen(true)} />
+                <Content>
+                    <P $fontSize="50px">Tour Guide</P>
+                    <P $margin="25px 0">
+                        Explore with confidence! Book a local guide to enrich your travel
+                        experience.
+                    </P>
+                    <Button onClick={() => setOpen(true)}>Book a Tour Guide</Button>
+                </Content>
+            </Card>
 
-      <Dialog
-        open={open}
-        onClose={() => setOpen(false)}
-        maxWidth={false}
-        PaperProps={{
-          style: {
-            width: "800px",
-            borderRadius: "20px",
-            background: "black",
-          },
-        }}
-        BackdropProps={{
-          style: {
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-            backdropFilter: "blur(5px)",
-          },
-        }}
-      >
-        <DialogWrapper>
-          <P $fontSize="60px">Tour Guide Booking</P>
-          <P $fontSize="25px" $width="514px" $textAlign="center" $margin="20px 0">
-            Tell us your destination and preferred language — we'll connect you with the best guide!
-          </P>
+            <Dialog
+                open={open}
+                onClose={() => setOpen(false)}
+                maxWidth={false}
+                PaperProps={{
+                    style: {
+                        width: "800px",
+                        borderRadius: "20px",
+                        background: "black",
+                    },
+                }}
+                BackdropProps={{
+                    style: {
+                        backgroundColor: "rgba(0, 0, 0, 0.7)",
+                        backdropFilter: "blur(5px)",
+                    },
+                }}
+            >
+                <DialogWrapper>
+                    <P $fontSize="60px">Tour Guide Booking</P>
+                    <P
+                        $fontSize="25px"
+                        $width="514px"
+                        $textAlign="center"
+                        $margin="20px 0"
+                    >
+                        Tell us your destination and preferred language — we'll connect you
+                        with the best guide!
+                    </P>
 
-          {submitted ? (
-            <P $fontSize="30px" $margin="40px 0">✅ Your guide request has been received!</P>
-          ) : (
-            <Form onSubmit={handleSubmit}>
-              <Input name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
-              <Input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} />
-              <Input name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} />
-              <Input name="destination" placeholder="Travel Destination" value={formData.destination} onChange={handleChange} />
-              <Input name="language" placeholder="Preferred Language (e.g. English, Japanese)" value={formData.language} onChange={handleChange} />
-              <FullWidth>
-                <TextArea name="additionalNotes" placeholder="Additional Notes (Optional)" value={formData.additionalNotes} onChange={handleChange} />
-              </FullWidth>
-              <FullWidth>
-                <Button type="submit">Submit Request</Button>
-              </FullWidth>
-            </Form>
-          )}
-        </DialogWrapper>
-      </Dialog>
-    </Wrapper>
-  );
+                    {submitted ? (
+                        <P $fontSize="30px" $margin="40px 0">
+                            ✅ Your guide request has been received!
+                        </P>
+                    ) : (
+                        <Form onSubmit={handleSubmit}>
+                            <Input
+                                name="fullName"
+                                placeholder="Full Name"
+                                value={formData.fullName}
+                                onChange={handleChange}
+                            />
+                            <Input
+                                name="phone"
+                                placeholder="Phone Number"
+                                value={formData.phone}
+                                onChange={handleChange}
+                            />
+                            <Input
+                                name="email"
+                                placeholder="Email Address"
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
+                            <Input
+                                name="destination"
+                                placeholder="Travel Destination"
+                                value={formData.destination}
+                                onChange={handleChange}
+                            />
+                            <Input
+                                name="language"
+                                placeholder="Preferred Language (e.g. English, Japanese)"
+                                value={formData.language}
+                                onChange={handleChange}
+                            />
+                            <FullWidth>
+                                <TextArea
+                                    name="additionalNotes"
+                                    placeholder="Additional Notes (Optional)"
+                                    value={formData.additionalNotes}
+                                    onChange={handleChange}
+                                />
+                            </FullWidth>
+                            <FullWidth>
+                                <Button type="submit">Submit Request</Button>
+                            </FullWidth>
+                        </Form>
+                    )}
+                </DialogWrapper>
+            </Dialog>
+        </Wrapper>
+    );
 };
 
 export default TourGuide;

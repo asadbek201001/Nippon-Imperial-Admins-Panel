@@ -1,11 +1,11 @@
 // libraries
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router";
 
 // images
-import LogoImg from '../images/logo.png';
+import LogoImg from "../images/logo.png";
 
 // styles
 const MenuWrapper = styled.div`
@@ -16,7 +16,7 @@ const MenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  border-right: 1px solid #B3935C;
+  border-right: 1px solid #b3935c;
 `;
 
 const Logo = styled.img`
@@ -46,7 +46,7 @@ const MenuSection = styled.div`
 
 const MenuItem = styled.div`
   font-size: 16px;
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
   margin-left: 10px;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -63,7 +63,7 @@ const Divider = styled.hr`
 
 const Divider2 = styled.hr`
   border: none;
-  border-top: 0.5px solid #B3935C;
+  border-top: 0.5px solid #b3935c;
   width: 80%;
   margin: 10px 0;
   margin-left: 20px;
@@ -71,15 +71,15 @@ const Divider2 = styled.hr`
 
 const variants = {
   open: {
-    height: 'auto',
+    height: "auto",
     opacity: 1,
-    transition: { duration: 0.5, ease: 'easeInOut' }
+    transition: { duration: 0.5, ease: "easeInOut" },
   },
   collapsed: {
     height: 0,
     opacity: 0,
-    transition: { duration: 0.5, ease: 'easeInOut' }
-  }
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
 };
 
 const Menu = () => {
@@ -91,10 +91,9 @@ const Menu = () => {
     <MenuWrapper>
       <Logo src={LogoImg} alt="Nippon Imperial Logo" />
 
-      {/* Concierge dropdown */}
       <div>
         <Dropdown onClick={() => setShowConcierge(!showConcierge)}>
-          Concierge {showConcierge ? '▾' : '▴'}
+          Concierge {showConcierge ? "▾" : "▴"}
         </Dropdown>
         <AnimatePresence initial={false}>
           {showConcierge && (
@@ -104,7 +103,7 @@ const Menu = () => {
               animate="open"
               exit="collapsed"
               variants={variants}
-              style={{ overflow: 'hidden' }}
+              style={{ overflow: "hidden" }}
             >
               <MenuSection>
                 <MenuItem onClick={() => navigate("/dashboard/accommodation")}>
@@ -115,7 +114,9 @@ const Menu = () => {
                   2) Restaurant Bookings
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/dashboard/luxurytransport")}>
+                <MenuItem
+                  onClick={() => navigate("/dashboard/luxurytransport")}
+                >
                   3) Luxury Transport
                 </MenuItem>
                 <Divider2 />
@@ -123,11 +124,15 @@ const Menu = () => {
                   4) Special Arrangements
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/dashboard/travelconsultation")}>
+                <MenuItem
+                  onClick={() => navigate("/dashboard/travelconsultation")}
+                >
                   5) Travel Consultation
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/dashboard/tourguidearrangements")}>
+                <MenuItem
+                  onClick={() => navigate("/dashboard/tourguidearrangements")}
+                >
                   6) Tour Guide Arrangements
                 </MenuItem>
               </MenuSection>
@@ -141,7 +146,7 @@ const Menu = () => {
       {/* Services dropdown */}
       <div>
         <Dropdown onClick={() => setShowServices(!showServices)}>
-          Services {showServices ? '▾' : '▴'}
+          Services {showServices ? "▾" : "▴"}
         </Dropdown>
         <AnimatePresence initial={false}>
           {showServices && (
@@ -151,14 +156,16 @@ const Menu = () => {
               animate="open"
               exit="collapsed"
               variants={variants}
-              style={{ overflow: 'hidden' }}
+              style={{ overflow: "hidden" }}
             >
               <MenuSection>
                 <MenuItem onClick={() => navigate("/services/chauffeur")}>
                   1) Chauffeur Service
                 </MenuItem>
                 <Divider2 />
-                <MenuItem onClick={() => navigate("/services/airport-transfer")}>
+                <MenuItem
+                  onClick={() => navigate("/services/airport-transfer")}
+                >
                   2) Airport Transfer
                 </MenuItem>
                 <Divider2 />

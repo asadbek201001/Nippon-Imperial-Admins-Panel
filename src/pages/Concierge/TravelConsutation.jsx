@@ -156,7 +156,8 @@ const TravelConsultation = () => {
         <Content>
           <P $fontSize="50px">Travel Consultation</P>
           <P $margin="25px 0">
-            Let our travel experts help you plan the perfect getaway tailored to your interests and schedule.
+            Let our travel experts help you plan the perfect getaway tailored to
+            your interests and schedule.
           </P>
           <Button onClick={() => setOpen(true)}>Get Consultation</Button>
         </Content>
@@ -182,23 +183,60 @@ const TravelConsultation = () => {
       >
         <DialogWrapper>
           <P $fontSize="60px">Travel Consultation</P>
-          <P $fontSize="25px" $width="514px" $textAlign="center" $margin="20px 0">
+          <P
+            $fontSize="25px"
+            $width="514px"
+            $textAlign="center"
+            $margin="20px 0"
+          >
             Tell us about your travel dreams and let’s make them happen!
           </P>
 
           {submitted ? (
-            <P $fontSize="30px" $margin="40px 0">✅ Your consultation request has been sent!</P>
+            <P $fontSize="30px" $margin="40px 0">
+              ✅ Your consultation request has been sent!
+            </P>
           ) : (
             <Form onSubmit={handleSubmit}>
-              <Input name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
-              <Input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} />
-              <Input name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} />
-              <Input name="destination" placeholder="Preferred Destination" value={formData.destination} onChange={handleChange} />
+              <Input
+                name="fullName"
+                placeholder="Full Name"
+                value={formData.fullName}
+                onChange={handleChange}
+              />
+              <Input
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+              <Input
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <Input
+                name="destination"
+                placeholder="Preferred Destination"
+                value={formData.destination}
+                onChange={handleChange}
+              />
               <FullWidth>
-                <TextArea name="travelGoals" placeholder="Describe your travel goals..." value={formData.travelGoals} onChange={handleChange} />
+                <TextArea
+                  name="travelGoals"
+                  placeholder="Describe your travel goals..."
+                  value={formData.travelGoals}
+                  onChange={handleChange}
+                />
               </FullWidth>
               <FullWidth>
-                <TextArea name="notes" placeholder="Additional Notes (Optional)" value={formData.notes} onChange={handleChange} />
+                <TextArea
+                  name="notes"
+                  placeholder="Additional Notes (Optional)"
+                  value={formData.notes}
+                  onChange={handleChange}
+                />
               </FullWidth>
               <FullWidth>
                 <Button type="submit">Submit Request</Button>

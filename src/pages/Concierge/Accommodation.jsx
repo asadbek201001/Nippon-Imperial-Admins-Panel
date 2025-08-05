@@ -153,7 +153,8 @@ const Accommodation = () => {
         <Content>
           <P $fontSize="50px">Accommodation Reservations</P>
           <P $margin="25px 0">
-            Tailored stays in Japan’s finest ryokans, villas, and penthouses — selected to match your pace, taste, and privacy.
+            Tailored stays in Japan’s finest ryokans, villas, and penthouses —
+            selected to match your pace, taste, and privacy.
           </P>
           <Button onClick={() => setOpen(true)}>Request a Stay</Button>
         </Content>
@@ -179,7 +180,12 @@ const Accommodation = () => {
       >
         <DialogWrapper>
           <P $fontSize="60px">Request a Stay</P>
-          <P $fontSize="25px" $width="514px" $textAlign="center" $margin="20px 0">
+          <P
+            $fontSize="25px"
+            $width="514px"
+            $textAlign="center"
+            $margin="20px 0"
+          >
             Let us know your preferences – we’ll craft the perfect stay for you.
           </P>
 
@@ -189,18 +195,57 @@ const Accommodation = () => {
             </P>
           ) : (
             <Form onSubmit={handleSubmit}>
-              <Input name="fullName" value={formData.fullName} onChange={handleChange} placeholder="Full Name" required />
-              <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="Email Address" required />
-              <Input name="checkIn" type="date" value={formData.checkIn} onChange={handleChange} required />
-              <Input name="checkOut" type="date" value={formData.checkOut} onChange={handleChange} required />
-              <Select name="stayType" value={formData.stayType} onChange={handleChange} required>
-                <option value="" disabled>Select Stay Type</option>
+              <Input
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                placeholder="Full Name"
+                required
+              />
+              <Input
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email Address"
+                required
+              />
+              <Input
+                name="checkIn"
+                type="date"
+                value={formData.checkIn}
+                onChange={handleChange}
+                required
+              />
+              <Input
+                name="checkOut"
+                type="date"
+                value={formData.checkOut}
+                onChange={handleChange}
+                required
+              />
+              <Select
+                name="stayType"
+                value={formData.stayType}
+                onChange={handleChange}
+                required
+              >
+                <option value="" disabled>
+                  Select Stay Type
+                </option>
                 <option value="ryokan">Ryokan</option>
                 <option value="villa">Villa</option>
                 <option value="penthouse">Penthouse</option>
               </Select>
-              <Select name="location" value={formData.location} onChange={handleChange} required>
-                <option value="" disabled>Select Location</option>
+              <Select
+                name="location"
+                value={formData.location}
+                onChange={handleChange}
+                required
+              >
+                <option value="" disabled>
+                  Select Location
+                </option>
                 <option value="tokyo">Tokyo</option>
                 <option value="kyoto">Kyoto</option>
                 <option value="osaka">Osaka</option>
@@ -214,7 +259,9 @@ const Accommodation = () => {
                   $width="100%"
                 />
               </FullWidth>
-              <Button type="submit" $margin="20px auto 0 auto">Submit Request</Button>
+              <Button type="submit" $margin="20px auto 0 auto">
+                Submit Request
+              </Button>
             </Form>
           )}
         </DialogWrapper>

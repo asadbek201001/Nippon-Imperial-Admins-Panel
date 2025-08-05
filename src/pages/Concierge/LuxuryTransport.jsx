@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Dialog } from "@mui/material";
 
 // Image
-import Img3  from "../../images/concierge/Img4.png";
+import Img3 from "../../images/concierge/Img4.png";
 
 // Styles
 const Wrapper = styled.div`
@@ -141,8 +141,26 @@ const Transport = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { fullName, phone, pickupDate, pickupTime, pickupLocation, dropoffLocation, vehicleType } = formData;
-    if (!(fullName && phone && pickupDate && pickupTime && pickupLocation && dropoffLocation && vehicleType)) {
+    const {
+      fullName,
+      phone,
+      pickupDate,
+      pickupTime,
+      pickupLocation,
+      dropoffLocation,
+      vehicleType,
+    } = formData;
+    if (
+      !(
+        fullName &&
+        phone &&
+        pickupDate &&
+        pickupTime &&
+        pickupLocation &&
+        dropoffLocation &&
+        vehicleType
+      )
+    ) {
       alert("Please fill all required fields.");
       return;
     }
@@ -156,7 +174,8 @@ const Transport = () => {
         <Content>
           <P $fontSize="50px">Luxury Transport</P>
           <P $margin="25px 0">
-            Book a luxury ride for business or leisure. Enjoy comfort and style wherever you go.
+            Book a luxury ride for business or leisure. Enjoy comfort and style
+            wherever you go.
           </P>
           <Button onClick={() => setOpen(true)}>Book Ride</Button>
         </Content>
@@ -182,22 +201,65 @@ const Transport = () => {
       >
         <DialogWrapper>
           <P $fontSize="60px">Book a Ride</P>
-          <P $fontSize="25px" $width="514px" $textAlign="center" $margin="20px 0">
+          <P
+            $fontSize="25px"
+            $width="514px"
+            $textAlign="center"
+            $margin="20px 0"
+          >
             Fill in the details and we'll send a luxury vehicle to your door.
           </P>
 
           {submitted ? (
-            <P $fontSize="30px" $margin="40px 0">✅ Your transport booking is confirmed!</P>
+            <P $fontSize="30px" $margin="40px 0">
+              ✅ Your transport booking is confirmed!
+            </P>
           ) : (
             <Form onSubmit={handleSubmit}>
-              <Input name="fullName" placeholder="Full Name" value={formData.fullName} onChange={handleChange} />
-              <Input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} />
-              <Input type="date" name="pickupDate" value={formData.pickupDate} onChange={handleChange} />
-              <Input type="time" name="pickupTime" value={formData.pickupTime} onChange={handleChange} />
-              <Input name="pickupLocation" placeholder="Pickup Location" value={formData.pickupLocation} onChange={handleChange} />
-              <Input name="dropoffLocation" placeholder="Drop-off Location" value={formData.dropoffLocation} onChange={handleChange} />
-              <Select name="vehicleType" value={formData.vehicleType} onChange={handleChange}>
-                <option value="" disabled>Select Vehicle Type</option>
+              <Input
+                name="fullName"
+                placeholder="Full Name"
+                value={formData.fullName}
+                onChange={handleChange}
+              />
+              <Input
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+              <Input
+                type="date"
+                name="pickupDate"
+                value={formData.pickupDate}
+                onChange={handleChange}
+              />
+              <Input
+                type="time"
+                name="pickupTime"
+                value={formData.pickupTime}
+                onChange={handleChange}
+              />
+              <Input
+                name="pickupLocation"
+                placeholder="Pickup Location"
+                value={formData.pickupLocation}
+                onChange={handleChange}
+              />
+              <Input
+                name="dropoffLocation"
+                placeholder="Drop-off Location"
+                value={formData.dropoffLocation}
+                onChange={handleChange}
+              />
+              <Select
+                name="vehicleType"
+                value={formData.vehicleType}
+                onChange={handleChange}
+              >
+                <option value="" disabled>
+                  Select Vehicle Type
+                </option>
                 <option value="limousine">Limousine</option>
                 <option value="suv">SUV</option>
                 <option value="sedan">Sedan</option>

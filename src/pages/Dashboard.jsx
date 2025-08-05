@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Menu from "../components/Menu";
-import { Outlet } from "react-router-dom"; 
+import { Outlet } from "react-router-dom";
 
 const DashboardWrapper = styled.div`
   display: flex;
@@ -17,14 +17,14 @@ const ContentWrapper = styled.div`
 `;
 
 const Dashboard = () => {
-  return (
-    <DashboardWrapper>
-      <Menu />
-      <ContentWrapper>
-        <Outlet /> 
-      </ContentWrapper>
-    </DashboardWrapper>
-  );
+    return (
+        <DashboardWrapper>
+            <Menu />
+            <ContentWrapper>
+                <Outlet />
+            </ContentWrapper>
+        </DashboardWrapper>
+    );
 };
 
 export default Dashboard;
