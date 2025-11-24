@@ -20,7 +20,7 @@ const Container = styled.div`
 const Header = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 `;
 
